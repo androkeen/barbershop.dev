@@ -123,32 +123,32 @@ const clean = () => {
 
 const scripts = () => {
 	return src('./src/js/**/*.js')
-		.pipe(webpackStream({
-			mode: 'development',
-			output: {
-				filename: 'main.js',
-			},
-			module: {
-				rules: [{
-					test: /\.m?js$/,
-					exclude: /(node_modules|bower_components)/,
-					use: {
-						loader: 'babel-loader',
-						options: {
-							presets: ['@babel/preset-env']
-						}
-					}
-				}]
-			},
-		}))
-		.on('error', function (err) {
-			console.error('WEBPACK ERROR', err);
-			this.emit('end'); // Don't stop the rest of the task
-		})
+		// .pipe(webpackStream({
+		// 	mode: 'development',
+		// 	output: {
+		// 		filename: 'main.js',
+		// 	},
+		// 	module: {
+		// 		rules: [{
+		// 			test: /\.m?js$/,
+		// 			exclude: /(node_modules|bower_components)/,
+		// 			use: {
+		// 				loader: 'babel-loader',
+		// 				options: {
+		// 					presets: ['@babel/preset-env']
+		// 				}
+		// 			}
+		// 		}]
+		// 	},
+		// }))
+		// .on('error', function (err) {
+		// 	console.error('WEBPACK ERROR', err);
+		// 	this.emit('end'); // Don't stop the rest of the task
+		// })
 
-		.pipe(sourcemaps.init())
-		.pipe(uglify().on("error", notify.onError()))
-		.pipe(sourcemaps.write('.'))
+		// .pipe(sourcemaps.init())
+		// .pipe(uglify().on("error", notify.onError()))
+		// .pipe(sourcemaps.write('.'))
 		.pipe(dest('./app/js'))
 		.pipe(browserSync.stream());
 }
@@ -192,29 +192,29 @@ const tinypng = () => {
 
 const scriptsBuild = () => {
 	return src('./src/js/**/*.js')
-		.pipe(webpackStream({
-				mode: 'development',
-				output: {
-					filename: 'main.js',
-				},
-				module: {
-					rules: [{
-						test: /\.m?js$/,
-						exclude: /(node_modules|bower_components)/,
-						use: {
-							loader: 'babel-loader',
-							options: {
-								presets: ['@babel/preset-env']
-							}
-						}
-					}]
-				},
-			}))
-			.on('error', function (err) {
-				console.error('WEBPACK ERROR', err);
-				this.emit('end'); // Don't stop the rest of the task
-			})
-		.pipe(uglify().on("error", notify.onError()))
+		// .pipe(webpackStream({
+		// 		mode: 'development',
+		// 		output: {
+		// 			filename: 'main.js',
+		// 		},
+		// 		module: {
+		// 			rules: [{
+		// 				test: /\.m?js$/,
+		// 				exclude: /(node_modules|bower_components)/,
+		// 				use: {
+		// 					loader: 'babel-loader',
+		// 					options: {
+		// 						presets: ['@babel/preset-env']
+		// 					}
+		// 				}
+		// 			}]
+		// 		},
+		// 	}))
+		// 	.on('error', function (err) {
+		// 		console.error('WEBPACK ERROR', err);
+		// 		this.emit('end'); // Don't stop the rest of the task
+		// 	})
+		// .pipe(uglify().on("error", notify.onError()))
 		.pipe(dest('./app/js'))
 }
 

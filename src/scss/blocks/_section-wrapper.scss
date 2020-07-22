@@ -1,0 +1,28 @@
+.section-wrapper {
+    display: flex;
+    justify-content: space-between;
+    
+    padding: 50px 80px;
+    margin-bottom: 35px;
+
+    color: #000000;
+    background-color: #f6f3f0;
+
+    background-image:
+        url("../img/line.png"),
+        url("../img/section-pattern.jpg");
+    background-position: center, 0, 0;
+    background-repeat: no-repeat, repeat;
+
+    @media (max-width: 900px) {
+        flex-direction: column;
+        background-image: url("../img/section-pattern.jpg");
+        background-position: center;
+        background-repeat: repeat;
+        padding: 25px 40px;
+    }
+
+    @media (max-width: 390px) {
+        padding: 25px 10px;
+    }
+}

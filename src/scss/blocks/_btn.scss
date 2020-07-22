@@ -1,0 +1,33 @@
+.swiper-button-prev,
+.swiper-button-next,
+.btn {
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px 30px;
+    color: #ffffff;    
+    background-color: #000000;   
+
+}
+
+.btn-back {
+    margin-right: 16px;
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active {
+  background-color: #663d15;
+}
+
+.btn.disabled,
+.btn:disabled {
+  cursor: default;
+  opacity: 0.5;
+  background-color: #000000;
+}
